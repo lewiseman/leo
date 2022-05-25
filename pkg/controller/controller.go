@@ -36,7 +36,6 @@ func handleRequest(conn net.Conn, data []byte) {
 	err := json.Unmarshal(data, &in)
 	if err != nil {
 		log.Println("Can;t unmarshal the byte array", err)
-		return
 	}
 
 	if in.Action == "presence" {
