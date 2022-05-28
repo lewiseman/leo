@@ -10,13 +10,13 @@ import (
 
 func main() {
 	app := fiber.New()
+
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
 		log.Printf("Defaulting to port %s", port)
 	}
-	app.Static("/", "./public")
+
 	routes.AppRoutes(app)
 	app.Listen(":" + port)
-
 }
