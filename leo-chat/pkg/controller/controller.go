@@ -5,8 +5,8 @@ import (
 	"log"
 	"net"
 
-	"lavless.com/chat/pkg/controller/presence"
-	"lavless.com/chat/pkg/models"
+	// "lavless.com/chat/pkg/controller/presence"
+	// "lavless.com/chat/pkg/models"
 )
 
 func HandleIncomingSockets(ln net.Listener) {
@@ -35,7 +35,7 @@ func handleRequest(conn net.Conn, data []byte) {
 	var in models.Incoming
 	err := json.Unmarshal(data, &in)
 	if err != nil {
-		log.Println("Can;t unmarshal the byte array", err)
+		log.Println("Can't unmarshal the byte array", err)
 	}
 
 	if in.Action == "presence" {
